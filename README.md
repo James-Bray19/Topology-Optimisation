@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This application is designed to help you perform topology optimization on 2D models. In this readme, you'll find essential information on how to use the app effectively.
+This application is designed to help you perform topology optimization on 2D models. It was made as an A-Level Coursework project from 2021/22. In this readme, you'll find essential information on how to use the app effectively.
 
 ![270122948-95a0b44f-8cf2-440d-88c1-7b03331ccf8e](https://github.com/James-Bray19/Topology-Optimisation/assets/47334864/187feda0-55b9-411f-8ac5-75af1fcfdc84)
 
