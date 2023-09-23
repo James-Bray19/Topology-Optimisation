@@ -32,7 +32,7 @@ The primary purpose of this application is to perform topology optimization. Top
 
 To get started with the Unity 2D Topology Optimization App, follow these steps:
 
-1. Download the files and launch this file: `Builds\Windows\Version 1\Topology Optimisation with FEA.exe`
+1. Download `Topology Optimisation.zip`, extract all and run: `Topology Optimisation with FEA.exe`
 
 2. Set up your constraints using the Constraint Editor on the top left of the screen.
 
