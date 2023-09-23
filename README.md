@@ -58,4 +58,4 @@ To get started with the Unity 2D Topology Optimization App, follow these steps:
 
 If you encounter any issues, have suggestions for improvements, or need assistance, please feel free to reach out to me.
 
-To edit the Unity project, download all files and import to unity hub.
+To edit the Unity project, please contact me for the files, since they were too large for the repo.
