@@ -54,6 +54,8 @@ To get started with the Unity 2D Topology Optimization App, follow these steps:
 
 - **Help Button**: If you're unsure how to use the application, there is a "Help" button located in the top-right corner. This feature provides guidance on using most of the software's functionalities.
 
+- **Code Examples**: These code samples are scripts designed to work inside a unity environment and will not run on their own.
+
 ## Feedback and Support
 
 If you encounter any issues, have suggestions for improvements, or need assistance, please feel free to reach out to me.
