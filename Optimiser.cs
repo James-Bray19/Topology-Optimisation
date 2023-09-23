@@ -17,8 +17,6 @@ public class Optimiser : MonoBehaviour
     #region Attributes
     public int xSize, ySize; // domain size
     public static string optimiseStatus; // optimisation stage
-    public int iterations; // temp
-    private int iteration; // temp
 
     public double penal; // penalisation factor
     public double rMin; // density filter radius
@@ -58,6 +56,7 @@ public class Optimiser : MonoBehaviour
     void Start()
     {
         optimiseStatus = "idle";
+        // precalculated local stiffness matrix of an element
         LSM = DenseMatrix.OfArray(new double[,] {
         { 0.4945054945054945,0.1785714285714285,-0.3021978021978022,-0.01373626373626375,-0.2472527472527473,-0.1785714285714285,0.05494505494505494,0.01373626373626375 },
         { 0.1785714285714285,0.4945054945054945,0.01373626373626375,0.05494505494505494,-0.1785714285714285,-0.2472527472527473,-0.01373626373626375,-0.3021978021978022 },
@@ -251,35 +250,6 @@ public class Optimiser : MonoBehaviour
         return temp;
     }
 
-    //Matrix<double> Filter(Matrix<double> matrix)
-    //{
-    //    Matrix<double> temp = new DenseMatrix(xSize, ySize);
-    //    for (int i = 0; i < xSize; i++)
-    //    {
-    //        for (int j = 0; j < ySize; j++)
-    //        {
-    //            double sum = 0;
-    //            for (int u = -(int)rMin; u < (int)rMin; u++)
-    //            {
-    //                if (i + u >= 0 && i + u < xSize)
-    //                {
-    //                    for (int v = -(int)rMin; v < (int)rMin; v++)
-    //                    {
-    //                        if (j + v >= 0 && j + v < ySize)
-    //                        {
-    //                            double fac = Max(0, rMin - Sqrt(v * v + u * u));
-    //                            sum = sum + fac;
-    //                            temp[i, j] = temp[i, j] + fac * p[u, v] * matrix[u, v];
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //            temp[i, j] = temp[i, j] / (p[i, j] * sum);
-    //        }
-    //    }
-    //    return temp;
-    //}
-
 
     // bisection algorithm to meet the users volume criteria
     void CriteriaUpdate()
@@ -318,7 +288,6 @@ public class Optimiser : MonoBehaviour
         p = pTrial;
     }
 
-
     // return a matrix where every value is mapped between 0 and 1
     //Matrix<double> Interpolate(Matrix<double> matrix)
     //{
@@ -352,7 +321,6 @@ public class Optimiser : MonoBehaviour
         int n2 = ndof(x + 1, y);
         //string output = "";
         //foreach (int k in (new int[] { n1 - 2, n1 - 1, n2 - 2, n2 - 1, n2, n2 + 1, n1, n1 + 1 })) { output += k.ToString() + ", "; }
-        //Debug.Log("edof for element x: " + x.ToString() + " y: " + y.ToString() + " is " + output);
         return new int[] { n1 - 2, n1 - 1, n2 - 2, n2 - 1, n2, n2 + 1, n1, n1 + 1 };
     }
 
